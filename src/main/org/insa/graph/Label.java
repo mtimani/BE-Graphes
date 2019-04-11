@@ -6,6 +6,7 @@ public class Label implements Comparable<Label>{
 	Node sommet_courant,pere_n;
 	Arc pere_a;
 	boolean marque;
+	boolean dans_tas;
 	double cout;
 	
 	
@@ -15,10 +16,23 @@ public class Label implements Comparable<Label>{
 		this.pere_a = a;
 		this.marque = m;
 		this.cout = c;
+		this.dans_tas = false;
 	}
 	
 	
 	
+	public boolean isDans_tas() {
+		return dans_tas;
+	}
+
+
+
+	public void setDans_tas(boolean dans_tas) {
+		this.dans_tas = dans_tas;
+	}
+
+
+
 	public Node getSommet_courant() {
 		return sommet_courant;
 	}
