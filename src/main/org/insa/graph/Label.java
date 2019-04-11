@@ -1,0 +1,99 @@
+package org.insa.graph;
+
+public class Label implements Comparable<Label>{
+
+	//Déclaration de variables
+	Node sommet_courant,pere_n;
+	Arc pere_a;
+	boolean marque;
+	double cout;
+	
+	
+	public Label(Node n, Node p, Arc a, boolean m, double c) {
+		this.sommet_courant = n;
+		this.pere_n = p;
+		this.pere_a = a;
+		this.marque = m;
+		this.cout = c;
+	}
+	
+	
+	
+	public Node getSommet_courant() {
+		return sommet_courant;
+	}
+
+
+
+
+	public void setSommet_courant(Node sommet_courant) {
+		this.sommet_courant = sommet_courant;
+	}
+
+
+
+
+	public Node getPere_n() {
+		return pere_n;
+	}
+
+
+
+
+	public void setPere_n(Node pere_n) {
+		this.pere_n = pere_n;
+	}
+
+
+
+
+	public Arc getPere_a() {
+		return pere_a;
+	}
+
+
+
+
+	public void setPere_a(Arc pere_a) {
+		this.pere_a = pere_a;
+	}
+
+
+
+
+	public boolean isMarque() {
+		return marque;
+	}
+
+
+
+
+	public void setMarque(boolean marque) {
+		this.marque = marque;
+	}
+
+
+
+
+	public double getCout() {
+		return cout;
+	}
+
+
+
+
+	public void setCout(double cout) {
+		this.cout = cout;
+	}
+
+
+
+
+	public double getCost() {
+		return this.cout;
+	}
+	
+	public int compareTo(Label other) {
+        return Double.compare(getCost(), other.getCost());
+    } 
+}
