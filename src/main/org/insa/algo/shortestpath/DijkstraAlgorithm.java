@@ -74,21 +74,26 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
             	}	
         	}
         }
-        if(map.get(destination).getPere_n() == null) {
+        if(!map.containsKey(destination)) {
         	solution = new ShortestPathSolution(data, Status.INFEASIBLE);
         }
         else {
-        	notifyDestinationReached(data.getDestination());
-        	ArrayList<Arc> arcs = new ArrayList<>();
-        	Arc arc = map.get(data.getDestination()).getPere_a();
-        	successeur = map.get(data.getDestination()).getPere_n();
-        	while (arc != null) {
-        		arcs.add(arc);
-        		arc = map.get(successeur).getPere_a();
-        		successeur = map.get(successeur).getPere_n();
+        	if(map.get(destination).getPere_n() == null) {
+            	solution = new ShortestPathSolution(data, Status.INFEASIBLE);
+            }
+        	else {
+        		notifyDestinationReached(data.getDestination());
+            	ArrayList<Arc> arcs = new ArrayList<>();
+            	Arc arc = map.get(data.getDestination()).getPere_a();
+            	successeur = map.get(data.getDestination()).getPere_n();
+            	while (arc != null) {
+            		arcs.add(arc);
+            		arc = map.get(successeur).getPere_a();
+            		successeur = map.get(successeur).getPere_n();
+            	}
+            	Collections.reverse(arcs);
+            	solution = new ShortestPathSolution(data, Status.OPTIMAL, new Path(data.getGraph(),arcs));
         	}
-        	Collections.reverse(arcs);
-        	solution = new ShortestPathSolution(data, Status.OPTIMAL, new Path(data.getGraph(),arcs));
         }
         
         return solution;
