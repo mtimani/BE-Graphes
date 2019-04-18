@@ -23,61 +23,55 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
         //Initialisation des variables
         BinaryHeap<Label> tas = new BinaryHeap<Label>();
-        Arc[] predecesseurs = new Arc[data.getGraph().size()]; 
         Label l;
         Node origin = data.getOrigin();
         Node destination = data.getDestination();
-        List<Node> nodes_graphe = data.getGraph().getNodes();
         Node courant,successeur;
         HashMap<Node,Label> map = new HashMap<Node,Label>();
         double min;
         
         //Initialisation de Dijkstra
         map.put(origin, new Label(origin,null,null,false,0));
-        tas.insert(new Label(origin,null,null,false,0));
+        tas.insert(map.get(origin));
+        notifyOriginProcessed(origin);
         
         //Corps de Dijkstra
-        boolean nok = false;
-        while(!tas.isEmpty()&&!nok) {
+        boolean found = false;
+        while(!tas.isEmpty()&&!found) {
         	l = tas.deleteMin();
         	l.setMarque(true);
         	courant = l.getSommet_courant();
-        	if(!map.containsKey(courant)) {
-    			map.put(courant, l);
-    		}
-        	else {
-        		map.get(courant).setMarque(true);
-        	}
+        	notifyNodeMarked(courant);
         	if (courant == data.getDestination()) {
-        		nok = true;
+        		found = true;
         	}
-        	List<Arc> a = courant.getSuccessors();
-        	for(int i=0;i<courant.getNumberOfSuccessors();i++) {
-        		successeur = a.get(i).getDestination();
-        		if (!data.isAllowed(a.get(i))) {
-    				continue;
-    			}
-        		
-        		if(!map.containsKey(successeur)) {
-        			map.put(successeur, new Label(nodes_graphe.get(i),null,null,false,Double.POSITIVE_INFINITY));
-        		}
-        		if(!map.get(successeur).isMarque()) {
-        			min = map.get(successeur).getCout();
-        			if (min > (map.get(courant).getCout()+a.get(i).getLength())) {
-        				min = map.get(courant).getCout()+a.get(i).getLength();
-        				map.get(successeur).setCout(min);
-        				map.get(successeur).setPere_n(courant);
-        				map.get(successeur).setPere_a(a.get(i));
-        				if (map.get(successeur).isDans_tas()) {
-        					tas.remove(map.get(successeur));;
-        				}
-        				else {
-        					map.get(successeur).setDans_tas(true);
-        				}
-        				tas.insert(map.get(successeur));
-        				predecesseurs[a.get(i).getDestination().getId()] = a.get(i);
+        	else {
+        		List<Arc> a = courant.getSuccessors();
+            	for(int i=0;i<courant.getNumberOfSuccessors();i++) {
+            		successeur = a.get(i).getDestination();
+            		notifyNodeReached(successeur);
+            		if (!data.isAllowed(a.get(i))) {
+        				continue;
         			}
-        		}
+            		
+            		if(!map.containsKey(successeur)) {
+            			map.put(successeur, new Label(successeur,null,null,false,Double.POSITIVE_INFINITY));
+            		}
+            		if(!map.get(successeur).isMarque()) {
+            			min = map.get(successeur).getCout();
+            			if (min > (l.getCout()+a.get(i).getLength())) {
+            				min = l.getCout()+a.get(i).getLength();
+            				map.get(successeur).setCout(min);
+            				map.get(successeur).setPere_n(courant);
+            				map.get(successeur).setPere_a(a.get(i));
+            				if (map.get(successeur).isDans_tas()) {
+            					tas.remove(map.get(successeur));
+            				}
+            				map.get(successeur).setDans_tas(true);
+            				tas.insert(map.get(successeur));
+            			}
+            		}
+            	}	
         	}
         }
         if(map.get(destination).getPere_n() == null) {
@@ -86,13 +80,14 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         else {
         	notifyDestinationReached(data.getDestination());
         	ArrayList<Arc> arcs = new ArrayList<>();
-        	Arc arc = predecesseurs[data.getDestination().getId()];
-        	System.out.print(map.get(data.getDestination()).getPere_n().getId()+"\n");
+        	Arc arc = map.get(data.getDestination()).getPere_a();
+        	successeur = map.get(data.getDestination()).getPere_n();
         	while (arc != null) {
         		arcs.add(arc);
-        		arc = predecesseurs[arc.getOrigin().getId()];
+        		arc = map.get(successeur).getPere_a();
+        		successeur = map.get(successeur).getPere_n();
         	}
-        	//Collections.reverse(arcs);
+        	Collections.reverse(arcs);
         	solution = new ShortestPathSolution(data, Status.OPTIMAL, new Path(data.getGraph(),arcs));
         }
         
