@@ -94,20 +94,23 @@ public class Label implements Comparable<Label>{
 	}
 
 
-
-
 	public void setCout(double cout) {
 		this.cout = cout;
 	}
 
-
-
+	public double getTotalCost() {
+		return this.cout;
+	}
+	
+	public void setTotalCost(double TotalCost) {
+		this.cout = TotalCost;
+	}
 
 	public double getCost() {
 		return this.cout;
 	}
 	
 	public int compareTo(Label other) {
-        return Double.compare(getCost(), other.getCost());
+        return Double.compare(getTotalCost(), other.getTotalCost());
     } 
 }
