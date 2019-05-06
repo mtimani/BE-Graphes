@@ -54,7 +54,7 @@ public class AStarAlgorithm extends DijkstraAlgorithm {
             		
             		if(!map.containsKey(successeur)) {
             			p1 = successeur.getPoint();
-            			map.put(successeur, new LabelStar(successeur,null,null,false,Double.POSITIVE_INFINITY,p1.distanceTo(p2)));//heuristique
+            			map.put(successeur, new LabelStar(successeur,null,null,false,Double.POSITIVE_INFINITY,p1.distanceTo(p2)));
             		}
             		if(!map.get(successeur).isMarque()) {
             			min = map.get(successeur).getTotalCost();
