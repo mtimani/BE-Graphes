@@ -25,11 +25,9 @@ public class AStarAlgorithm extends DijkstraAlgorithm {
         Node courant,successeur;
         HashMap<Node,LabelStar> map = new HashMap<Node,LabelStar>();
         double min;
-        Point p1 = origin.getPoint();
-        Point p2 = destination.getPoint();
         
         //Initialisation de Dijkstra
-        map.put(origin, new LabelStar(origin,null,null,false,0,p1.distanceTo(p2)));
+        map.put(origin, new LabelStar(origin,null,destination,null,false,0,data));
         tas.insert(map.get(origin));
         notifyOriginProcessed(origin);
         
@@ -53,13 +51,12 @@ public class AStarAlgorithm extends DijkstraAlgorithm {
         			}
             		
             		if(!map.containsKey(successeur)) {
-            			p1 = successeur.getPoint();
-            			map.put(successeur, new LabelStar(successeur,null,null,false,Double.POSITIVE_INFINITY,p1.distanceTo(p2)));
+            			map.put(successeur, new LabelStar(successeur,null,destination,null,false,Double.POSITIVE_INFINITY,data));
             		}
             		if(!map.get(successeur).isMarque()) {
             			min = map.get(successeur).getTotalCost();
-            			if (min > (l.getTotalCost()+a.get(i).getLength())) {
-            				min = l.getTotalCost()+a.get(i).getLength();
+            			if (min > (l.getTotalCost()+data.getCost(a.get(i)))) {
+            				min = l.getTotalCost()+data.getCost(a.get(i));
             				map.get(successeur).setTotalCost(min);
             				map.get(successeur).setPere_n(courant);
             				map.get(successeur).setPere_a(a.get(i));

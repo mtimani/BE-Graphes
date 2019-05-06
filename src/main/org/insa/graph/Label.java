@@ -1,4 +1,6 @@
 package org.insa.graph;
+import org.insa.algo.AbstractInputData;
+import org.insa.algo.shortestpath.ShortestPathData;;
 
 public class Label implements Comparable<Label>{
 
@@ -10,12 +12,17 @@ public class Label implements Comparable<Label>{
 	double cout;
 	
 	
-	public Label(Node n, Node p, Arc a, boolean m, double c) {
+	public Label(Node n, Node p, Node dest, Arc a, boolean m, double c, ShortestPathData d) {
 		this.sommet_courant = n;
 		this.pere_n = p;
 		this.pere_a = a;
 		this.marque = m;
-		this.cout = c;
+		if (d.getMode()==AbstractInputData.Mode.TIME) {
+			this.cout = a.getTravelTime(d.getMaximumSpeed());
+		}
+		else {
+			this.cout = c;
+		}
 		this.dans_tas = false;
 	}
 	

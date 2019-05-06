@@ -31,7 +31,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         double min;
         
         //Initialisation de Dijkstra
-        map.put(origin, new Label(origin,null,null,false,0));
+        map.put(origin, new Label(origin,null,destination,null,false,0,data));
         tas.insert(map.get(origin));
         notifyOriginProcessed(origin);
         
@@ -55,12 +55,12 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         			}
             		
             		if(!map.containsKey(successeur)) {
-            			map.put(successeur, new Label(successeur,null,null,false,Double.POSITIVE_INFINITY));
+            			map.put(successeur, new Label(successeur,null,destination,null,false,Double.POSITIVE_INFINITY,data));
             		}
             		if(!map.get(successeur).isMarque()) {
             			min = map.get(successeur).getCout();
-            			if (min > (l.getCout()+a.get(i).getLength())) {
-            				min = l.getCout()+a.get(i).getLength();
+            			if (min > (l.getCout()+data.getCost(a.get(i)))) {
+            				min = l.getCout()+data.getCost(a.get(i));
             				map.get(successeur).setCout(min);
             				map.get(successeur).setPere_n(courant);
             				map.get(successeur).setPere_a(a.get(i));
