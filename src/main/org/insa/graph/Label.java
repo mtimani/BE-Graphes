@@ -10,20 +10,17 @@ public class Label implements Comparable<Label>{
 	boolean marque;
 	boolean dans_tas;
 	double cout;
+	Graph graphe;
 	
 	
-	public Label(Node n, Node p, Node dest, Arc a, boolean m, double c, ShortestPathData d) {
+	public Label(Node n, Node p, Node dest, Arc a, boolean m, double c, ShortestPathData d, Graph g) {
 		this.sommet_courant = n;
 		this.pere_n = p;
 		this.pere_a = a;
 		this.marque = m;
-		if (d.getMode()==AbstractInputData.Mode.TIME) {
-			this.cout = a.getTravelTime(d.getMaximumSpeed());
-		}
-		else {
-			this.cout = c;
-		}
+		this.cout = c;
 		this.dans_tas = false;
+		this.graphe = g;
 	}
 	
 	

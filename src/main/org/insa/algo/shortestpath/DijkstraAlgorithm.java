@@ -15,6 +15,10 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         super(data);
         this.nbSommetsVisites = 0;
     }
+    
+    public Label newLabel(Node n, Node p, Node dest, Arc a, boolean m, double c, ShortestPathData d, Graph g) {
+    	return new Label(n,p,dest,a,m,c,d,g);
+    }
 
     @Override
     protected ShortestPathSolution doRun() {
@@ -31,7 +35,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         double min;
         
         //Initialisation de Dijkstra
-        map.put(origin, new Label(origin,null,destination,null,false,0,data));
+        map.put(origin, newLabel(origin,null,destination,null,false,0,data,data.getGraph()));
         tas.insert(map.get(origin));
         notifyOriginProcessed(origin);
         
@@ -55,7 +59,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         			}
             		
             		if(!map.containsKey(successeur)) {
-            			map.put(successeur, new Label(successeur,null,destination,null,false,Double.POSITIVE_INFINITY,data));
+            			map.put(successeur, newLabel(successeur,null,destination,null,false,Double.POSITIVE_INFINITY,data, data.getGraph()));
             		}
             		if(!map.get(successeur).isMarque()) {
             			min = map.get(successeur).getCout();
