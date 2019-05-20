@@ -181,7 +181,5 @@ public class DijkstraTestWithMap {
 	
 			}
 		}
-		System.out.println();
-		System.out.println();
 	}
 }

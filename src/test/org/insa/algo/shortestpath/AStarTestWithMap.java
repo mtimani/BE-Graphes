@@ -180,7 +180,5 @@ public class AStarTestWithMap {
 	
 			}
 		}
-		System.out.println();
-		System.out.println();
 	}
 }
