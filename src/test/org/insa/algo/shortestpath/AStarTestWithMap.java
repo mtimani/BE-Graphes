@@ -58,7 +58,13 @@ public class AStarTestWithMap {
 					ShortestPathData data = new ShortestPathData(graph, graph.get(origine),graph.get(destination), arcInspectorAStar);
 		
 					BellmanFordAlgorithm B = new BellmanFordAlgorithm(data);
+					long startTime, endTime; 
+					float duration;
+					startTime = System.nanoTime();
 					AStarAlgorithm A = new AStarAlgorithm(data);
+					endTime = System.nanoTime();
+					duration = (endTime - startTime)/1000000;
+					System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n"); 
 					
 					// Recuperation des solutions de Bellman et AStar pour comparer 
 					ShortestPathSolution solution = A.run();

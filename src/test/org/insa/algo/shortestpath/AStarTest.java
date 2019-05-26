@@ -144,10 +144,10 @@ public class AStarTest {
 		origine = 0 ;
 		destination = 0;
 		startTime = System.nanoTime();
-		test.testScenario(mapName, 1,origine,destination);    
+		test.testScenario(mapName, 1,origine,destination);
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    
 		
 		System.out.println("----- Cas d'un chemin simple ------");
 		origine = 38926;
@@ -156,7 +156,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 	
 		
 		System.out.println("----- Cas de sommets inexistants ------");
@@ -168,7 +168,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : Existe ----------------");
@@ -179,7 +179,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 		
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : N'existe pas ----------");
@@ -190,7 +190,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 	}
 
 	
@@ -217,7 +217,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   
 		
 		System.out.println("----- Cas d'un chemin simple ------");
 		origine = 38926;
@@ -226,7 +226,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   	
 	
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : N'existe pas ----------");
@@ -237,7 +237,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   	
 
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : Existe ----------------");
@@ -248,7 +248,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   	
 		
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : N'existe pas ----------");
@@ -259,7 +259,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   	
 	}
 
 	//@Test
@@ -286,7 +286,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    
 		
 		System.out.println("----- Cas d'un chemin simple ------");
 		origine = 607;
@@ -295,7 +295,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 	
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : N'existe pas ----------");
@@ -306,7 +306,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : Existe ----------------");
@@ -317,7 +317,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 		
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : N'existe pas ----------");
@@ -328,7 +328,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   
 	}
 
 	//@Test
@@ -354,7 +354,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   
 		
 		System.out.println("----- Cas d'un chemin simple ------");
 		origine = 607;
@@ -363,7 +363,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   	
 	
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : N'existe pas ----------");
@@ -374,7 +374,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   	
 
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : Existe ----------------");
@@ -385,7 +385,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   	
 		
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : N'existe pas ----------");
@@ -396,7 +396,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");  
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");  
 	}
 	
 	//@Test
@@ -423,7 +423,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    		
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    		
 	}
 
 	//@Test
@@ -449,7 +449,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   			
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   			
 	}
 	
 	
@@ -476,7 +476,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 	
 		System.out.println("----- Cas de sommets non connexes ------");
 		origine = 9950;
@@ -485,7 +485,7 @@ public class AStarTest {
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 
 	}
 	
@@ -512,7 +512,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);      
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 	
 		System.out.println("----- Cas de sommets non connexes ------");
 		origine = 9950;
@@ -521,7 +521,7 @@ public class AStarTest {
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");   	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");   	
 
 	}
 
@@ -547,7 +547,7 @@ public class AStarTest {
 		test.testScenarioSansOracle(mapName,origine,destination);        
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");  
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");  
 		
 		System.out.println("----- Cas d'un chemin simple ------");
 		origine = 38926;
@@ -556,7 +556,7 @@ public class AStarTest {
 		test.testScenarioSansOracle(mapName,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");     	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");     	
 	
 		
 		System.out.println("----- Cas de sommets inexistants ------");
@@ -568,7 +568,7 @@ public class AStarTest {
 		test.testScenarioSansOracle(mapName,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    	
 
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : Existe ----------------");
@@ -579,7 +579,7 @@ public class AStarTest {
 		test.testScenarioSansOracle(mapName,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");     	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");     	
 		
 		System.out.println("----- Cas de sommets inexistants ------");
 		System.out.println("----- Origine : N'existe pas ----------");
@@ -590,7 +590,7 @@ public class AStarTest {
 		test.testScenarioSansOracle(mapName,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");    
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");    
 	}
 
 	@Test
@@ -615,7 +615,7 @@ public class AStarTest {
 		test.testScenarioSansOracle(mapName,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");     
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");     
 	}
 	
 	@Test
@@ -640,7 +640,7 @@ public class AStarTest {
 		test.testScenarioSansOracle(mapName,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");     	
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");     	
 	
 		System.out.println("----- Cas de sommets non connexes ------");
 		origine = 9950;
@@ -649,7 +649,7 @@ public class AStarTest {
 		test.testScenarioSansOracle(mapName,origine,destination);    
 		endTime = System.nanoTime();
 		duration = (endTime - startTime)/1000000;
-		System.out.println("Le temps d'execution de l'Algorithme Dijkstra est de : " + duration + " ms.\n\n");     
+		System.out.println("Le temps d'execution de l'Algorithme A* est de : " + duration + " ms.\n\n");     
 	}
 	
 
