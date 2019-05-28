@@ -418,8 +418,8 @@ public class DijkstraTest {
 		System.out.println();
 		
 		System.out.println("----- Cas d'un chemin simple ------");
-		origine = 0;
-		destination = 204097;
+		origine = 46783;
+		destination = 77914;
 		startTime = System.nanoTime();
 		test.testScenario(mapName, 1,origine,destination);    
 		endTime = System.nanoTime();
@@ -444,8 +444,8 @@ public class DijkstraTest {
 		System.out.println();
 
 		System.out.println("----- Cas d'un chemin simple ------");
-		origine = 0;
-		destination = 204097;
+		origine = 46783;
+		destination = 77914;
 		startTime = System.nanoTime();
 		test.testScenario(mapName, 0,origine,destination);    
 		endTime = System.nanoTime();
@@ -610,8 +610,8 @@ public class DijkstraTest {
 		System.out.println();
 
 		System.out.println("----- Cas d'un chemin simple ------");
-		origine = 0;
-		destination = 100052;
+		origine = 46783;
+		destination = 77914;
 		startTime = System.nanoTime();
 		test.testScenarioSansOracle(mapName,origine,destination);   
 		endTime = System.nanoTime();
