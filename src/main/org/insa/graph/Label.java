@@ -28,92 +28,48 @@ public class Label implements Comparable<Label>{
 	public boolean isDans_tas() {
 		return dans_tas;
 	}
-
-
-
 	public void setDans_tas(boolean dans_tas) {
 		this.dans_tas = dans_tas;
 	}
-
-
-
 	public Node getSommet_courant() {
 		return sommet_courant;
 	}
-
-
-
-
 	public void setSommet_courant(Node sommet_courant) {
 		this.sommet_courant = sommet_courant;
 	}
-
-
-
-
 	public Node getPere_n() {
 		return pere_n;
 	}
-
-
-
-
 	public void setPere_n(Node pere_n) {
 		this.pere_n = pere_n;
 	}
-
-
-
-
 	public Arc getPere_a() {
 		return pere_a;
 	}
-
-
-
-
 	public void setPere_a(Arc pere_a) {
 		this.pere_a = pere_a;
 	}
-
-
-
-
 	public boolean isMarque() {
 		return marque;
 	}
-
-
-
-
 	public void setMarque(boolean marque) {
 		this.marque = marque;
 	}
-
-
-
-
 	public double getCout() {
 		return cout;
 	}
-
-
 	public void setCout(double cout) {
 		this.cout = cout;
 	}
-
 	public double getTotalCost() {
 		return this.cout;
 	}
-	
 	public void setTotalCost(double TotalCost) {
 		this.cout = TotalCost;
 	}
-
 	public double getCost() {
 		return this.cout;
 	}
-	
 	public int compareTo(Label other) {
         return Double.compare(getTotalCost(), other.getTotalCost());
     } 

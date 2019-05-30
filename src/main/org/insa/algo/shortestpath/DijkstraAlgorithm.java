@@ -59,7 +59,8 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         			}
             		
             		if(!map.containsKey(successeur)) {
-            			map.put(successeur, newLabel(successeur,null,destination,null,false,Double.POSITIVE_INFINITY,data, data.getGraph()));
+            			map.put(successeur, newLabel(successeur,null,destination,null,false,
+            					Double.POSITIVE_INFINITY,data, data.getGraph()));
             		}
             		if(!map.get(successeur).isMarque()) {
             			min = map.get(successeur).getCout();
